@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// counter
+.counter__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+.number {
+  font-size: 28px;
+}
+.cheveron {
+  border: solid red;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 6px;
+  cursor: pointer;
+
+  &.cheveron__up {
+    transform: rotate(-135deg);
+  }
+
+  &.cheveron__down {
+    transform: rotate(45deg);
+  }
+}
