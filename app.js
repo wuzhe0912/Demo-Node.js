@@ -1,17 +1,28 @@
-// const player = require('./player');
-
-// player.barbarian('Mario');
-// player.witchDoctor('Paul');
-
+const http = require('http');
+const url = require('url');
 const fs = require('fs');
+const path = require('path');
 
-fs.writeFile('player.md', 'Test write Markdown file.', (e) => {
-  if (e) throw e;
-
-  console.log('File has been written.');
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    fs.readFile(path.join(__dirname, 'index.html'), 'utf8', (err, data) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.write(data);
+        res.end();
+      }
+    });
+  } else {
+    let parsedURL = url.parse(req.url);
+    res.write(`Welcome ${parsedURL.pathname}`);
+    res.end();
+  }
 });
 
-fs.readFile('./player.md', 'utf-8', (e, data) => {
-  if (e) throw e;
-  console.log(data);
+const PORT = 3002;
+
+server.listen(PORT, () => {
+  console.log(`listening on ${PORT}`);
 });
