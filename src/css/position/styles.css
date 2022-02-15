@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  height: 1000px;
+  border: 1px solid green;
+}
+
+.element {
+  width: 40px;
+  height: 40px;
+}
+
+.static-element {
+  position: static;
+  background: #FF5151;
+}
+
+.relative-element {
+  position: relative;
+  background: #5F8DF3;
+  top: 20px;
+  left: 20px;
+}
+
+.absolute-element {
+  position: absolute;
+  background: #CCC;
+  width: 20px;
+  height: 20px;
+}
+
+.sticky-element {
+  position: sticky;
+  background: #FFA74F;
+  top: 0;
+}
+
+.fixed-element {
+  position: fixed;
+  background: #63A03F;
+  top: 0;
+  left: 0;
+}
