@@ -12,5 +12,8 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"  // formater all js file to react
+  },
 }

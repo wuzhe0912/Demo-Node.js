@@ -22,10 +22,11 @@ export const postsSlice = createSlice({
         state.unshift(action.payload);
       },
       // pre-processing action and must return object
-      prepare(title, content) {
+      prepare(title, content, userId) {
         return {
           payload: {
             id: nanoid(),
+            userId,
             title,
             content,
           },
